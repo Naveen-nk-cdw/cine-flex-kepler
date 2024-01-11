@@ -1,11 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/header';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './pages/layout';
+import Home from './pages/home';
+import AllMovies from './pages/allMovies';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout/>}>
+            <Route index element={<Home/>}/>
+            <Route path='/all-movies' element={<AllMovies/>}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

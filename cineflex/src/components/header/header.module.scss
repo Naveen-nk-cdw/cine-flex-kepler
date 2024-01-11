@@ -1,0 +1,46 @@
+@use '../../styles/colors';
+
+.header{
+    background-color: colors.$black;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: colors.$white;
+    text-transform: uppercase;
+    .logo{
+        width: 10%;
+    }
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
+    .links{
+        display: flex;
+        font-size: 1.5rem;
+        font-weight: 500;
+        gap: 4rem;
+        cursor: pointer;
+        
+        .home{
+            
+            &:hover{
+                color: colors.$blue;
+            }
+        }
+        .allMovies{
+            text-decoration: none;
+            &:hover{
+                color: colors.$blue;
+            }
+        }
+    }
+    .profile{
+        .logout{
+            cursor: pointer;
+            &:hover{
+                color: colors.$blue;
+            }
+        }
+    }   
+}
