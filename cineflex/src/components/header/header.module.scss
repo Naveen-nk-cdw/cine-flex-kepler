@@ -2,12 +2,11 @@
 
 .header{
     background-color: colors.$black;
-    padding: 1rem;
+    padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: colors.$white;
-    text-transform: uppercase;
     .logo{
         width: 10%;
     }
@@ -21,9 +20,8 @@
         font-weight: 500;
         gap: 4rem;
         cursor: pointer;
-        
+        text-transform: uppercase;
         .home{
-            
             &:hover{
                 color: colors.$blue;
             }
@@ -34,9 +32,30 @@
                 color: colors.$blue;
             }
         }
+        .nowShowing{
+            &:hover{
+                color: colors.$blue;
+            }
+        }
     }
     .profile{
+        display: flex;
+        gap: 1rem;
+        .userName{
+            &::after{
+                content: '';
+                padding-left: 0.8rem ;
+                border-right: 1px solid colors.$white;
+            }
+        }
+        .login{
+            text-transform: capitalize;
+        }
         .logout{
+            text-transform: uppercase;
+        }
+        .logout,
+        .login{
             cursor: pointer;
             &:hover{
                 color: colors.$blue;

@@ -7,6 +7,8 @@ export const CONSTANTS = {
         HOME_ROUTE : "/",
         ALL_MOVIES_ROUTE : "/all-movies",
         LOGIN_ROUTE : "/login",
-        NOW_SHOWING : "/now-showing",
+        NOW_SHOWING_ROUTE : "/now-showing",
+        NOW_SHOWING : "Now Showing",
+        USER_GREETING : "Hi",
     }
 }
