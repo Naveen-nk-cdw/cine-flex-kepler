@@ -12,6 +12,7 @@ const ProtecedRoute = () => {
     return (
         <Outlet />
     )
+    //new line
 }
 
 export default ProtecedRoute
