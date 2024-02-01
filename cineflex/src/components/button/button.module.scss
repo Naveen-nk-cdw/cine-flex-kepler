@@ -1,0 +1,16 @@
+@use '../../styles/colors';
+.customButton{
+    padding: 1rem 1rem;
+    cursor: pointer;
+    border: 0;
+    color: colors.$white;
+    &.disabled{
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+}
+.prizeButton{
+    @extend .customButton;
+    background-color: colors.$lotteryRed;
+    font-size: 1.2rem;
+}
