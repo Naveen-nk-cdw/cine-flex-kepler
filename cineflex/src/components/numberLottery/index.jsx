@@ -5,19 +5,23 @@ import Button from '../button'
 const NumberLottery = () => {
     const [phoneNumber,setPhoneNumber] = useState('');
     const [phoneNumberError,setPhoneNumberError] = useState(false);
-    const [lotteryWinner,setLotteryWinner] = useState(false);
+    const [lotteryWinner,setLotteryWinner] = useState(null);
     const handleNumberInput = (event) => {
         setPhoneNumber(event.target.value);
+    }
+    if(lotteryWinner === "loser")
+    {
+        throw new Error('oops')
     }
     useEffect(()=>{
         setPhoneNumberError( phoneNumber?.length!==0 && !CONSTANTS.NUMBER_LOTTERY.PHONE_NUMBER_REGEX.test(phoneNumber));
     },[phoneNumber])
     const checkPrizeWinner = () => {
         if(parseInt(phoneNumber)%2===0){
-            setLotteryWinner(true)
+            setLotteryWinner('winner')
         } 
         else{
-            throw new Error("oops");
+            setLotteryWinner('loser')
         }
     }
   return (

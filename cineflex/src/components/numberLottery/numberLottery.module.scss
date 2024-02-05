@@ -5,7 +5,7 @@
     align-items: center;
     column-gap: 1rem;
     padding: 2rem 6rem;
-    background-image: linear-gradient(to right,colors.$gold1,colors.$gold2);
+    background: colors.$primaryGold;
     .participateMessage{
         color: colors.$white;
         font-size: 1.5rem;

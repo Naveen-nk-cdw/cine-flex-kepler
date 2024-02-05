@@ -1,5 +1,7 @@
 import React from "react";
-export class ErrorBoundary extends React.Component {
+import styles from '../numberLottery/numberLottery.module.scss';
+import { CONSTANTS } from "../../constants/constants";
+class ErrorBoundary extends React.Component {
     constructor(props) {
       super(props);
       this.state = { hasError: false };
@@ -15,12 +17,15 @@ export class ErrorBoundary extends React.Component {
     
   
     render() {
-        console.log('error');
       if (this.state.hasError) {
-        return <h1>Something went wrong.</h1>;
+        return <div className={styles.container}>
+            <div className={styles.winnerMessage}>
+                {CONSTANTS.NUMBER_LOTTERY.LOSE_PRIZE}
+            </div>
+        </div>;
       }
   
       return this.props.children;
     }
 }
-  
+export default ErrorBoundary;

@@ -3,7 +3,9 @@ import styles from './home.module.scss'
 import homeBanner from '../../assets/sindel-background.png'
 import { CONSTANTS } from '../../constants/constants'
 import NumberLottery from '../../components/numberLottery'
-import { ErrorBoundary } from '../../components/errorBoundary'
+import ErrorBoundary from '../../components/errorBoundary'
+import Trailer from '../../components/trailer'
+
 const Home = () => {
   return (
     <>
@@ -13,6 +15,9 @@ const Home = () => {
       <ErrorBoundary>
         <NumberLottery/>
       </ErrorBoundary>
+      <div className={styles.homeContainer}>
+        <Trailer/>
+      </div>
     </>
   )
 }

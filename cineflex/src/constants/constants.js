@@ -21,5 +21,13 @@ export const CONSTANTS = {
         INPUT_PLACEHOLDER : "Enter Mobile Number",
         SUBMIT_BUTTON_LABEL : "I'm Feeling Lucky",
         PHONE_NUMBER_REGEX : /^\d{10}$/,
+    },
+    TRAILER : {
+        HEADING : "Trailers",
+        SIGIN_IN_PREFIX : "You need to sign in to view Trailers ",
+        SIGNI_IN : "Sign In Now",
+        SINTEL_HEADING : "Sintel",
+        SINTEL_DESCRIPTION : "Sintel tells the story of a friendship between a girl named Sintel, a baby dragon and the desperate lengths she will go to when that friendship is taken from her. Sintel is created by Blender in 2010 as a set project to demonstrate blender capabilities.",
+        WATCHNOW_BUTTON_LABEL : "Watch Now",
     }
 }

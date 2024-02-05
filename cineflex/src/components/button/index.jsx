@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './button.module.scss'
 const Button = ({ onClick, label, type, disabled }) => {
+  console.log(styles);
   return (
     <button
       className={`${type ? styles[`${type}Button`] : ''} ${disabled ? styles.disabled : ''}`}
