@@ -28,7 +28,7 @@ const Trailer = () => {
         }
         <div className={styles.container}>
             <div className={styles.leftContainer}>
-                <img src={trailerImage} alt="Sintel Image" />
+                <img src={trailerImage} alt="Sintel" />
             </div>
             <div className={styles.rightContainer}>
                 <h2>{CONSTANTS.TRAILER.SINTEL_HEADING}</h2>

@@ -5,6 +5,8 @@ import { CONSTANTS } from '../../constants/constants'
 import NumberLottery from '../../components/numberLottery'
 import ErrorBoundary from '../../components/errorBoundary'
 import Trailer from '../../components/trailer'
+import ShortTeaserVideo from '../../components/shortTeaserVideo'
+import AdWrapper from '../../components/adWrapper'
 
 const Home = () => {
   return (
@@ -17,6 +19,9 @@ const Home = () => {
       </ErrorBoundary>
       <div className={styles.homeContainer}>
         <Trailer/>
+        <div className={styles.shortTeaserContainer}>
+          {AdWrapper(ShortTeaserVideo,1,1,"https://tympanus.net/Development/SeatPreview/media/sintel.mp4","The Mountain Climber")}
+        </div>
       </div>
     </>
   )
