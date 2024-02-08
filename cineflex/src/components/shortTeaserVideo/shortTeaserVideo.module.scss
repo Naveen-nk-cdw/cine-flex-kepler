@@ -1,6 +1,6 @@
 @use '../../styles/colors';
 .container{
-    width: calc((100% - 2rem) / 3);
+    width: 100%;
     .heading{
         color: colors.$white;
         margin: 1rem 0;
@@ -17,5 +17,11 @@
             transform: translate(-50%, -50%);
             cursor: pointer;
         }
-    }  
+    }
+    img{
+        width: 100%;
+    }
+    .hide{
+        display: none;
+    }
 }

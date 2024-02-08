@@ -2,3 +2,6 @@
 .counter{
     color: colors.$blue;
 }
+.container{
+    width: calc((100% - 2rem)/3);
+}

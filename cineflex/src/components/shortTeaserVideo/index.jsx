@@ -1,39 +1,48 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './shortTeaserVideo.module.scss'
 import { FaPlayCircle } from "react-icons/fa";
 
-const ShortTeaserVideo = ({ src, width = '100%', isAdPlaying, onPlay = null, onPause = null, heading = null}) => {
+const ShortTeaserVideo = ({ src, width = '100%', isAdPlaying, isAdDisplayed=null, onPlay = null, onPause = null, heading = null}) => {
     const videoRef = useRef(null);
     const [isVideoPlaying, setIsVideoplaying] = useState(false)
     const startPlay = () => {
-        const player = videoRef.current;
-        player.play()
+        const player = videoRef?.current;
+        player?.play()
         setIsVideoplaying(true)
-        if(onPlay)
+        if(!isAdDisplayed && onPlay)
         {
             onPlay();
         }
     }
 
-    const pausePlay = (event) => {
-        const player = videoRef.current;
-        player.pause()
+    const pausePlay = () => {
         setIsVideoplaying(false)
-        if(onPause)
+        if(!isAdDisplayed && onPause)
         {
             onPause();
         }
-        event.nativeEvent.stopImmediatePropagation();
     }
+
+    useEffect(()=>{
+        if(isAdPlaying)
+        {
+            const player = videoRef.current;
+            player.pause();   
+        }
+        else if(isAdPlaying!==null)
+        {
+            startPlay();
+        }
+    },[isAdPlaying])
    
     
     return (    
         <div className={styles.container}>  
-            {isAdPlaying ? <div className={styles.videoContainer}>
-                <video ref={videoRef} src={src}  width={width} onClick={isVideoPlaying? pausePlay : null} onPause={pausePlay} controls={isVideoPlaying}/>
+            <div className= {!isAdPlaying ?styles.videoContainer : styles.hide}>
+                <video ref={videoRef} src={src}  width={width}  onPause={pausePlay} controls={isVideoPlaying}/>
                 { !isVideoPlaying && <FaPlayCircle className={styles.playIcon} onClick={startPlay}/>}
             </div>
-            : <img src={src} alt="ad"/>}
+            <img className={isAdPlaying ?styles.videoContainer : styles.hide} src={src} alt="ad"/>
             <div className={styles.heading}>
                 {heading}
             </div>

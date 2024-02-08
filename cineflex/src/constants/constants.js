@@ -29,5 +29,13 @@ export const CONSTANTS = {
         SINTEL_HEADING : "Sintel",
         SINTEL_DESCRIPTION : "Sintel tells the story of a friendship between a girl named Sintel, a baby dragon and the desperate lengths she will go to when that friendship is taken from her. Sintel is created by Blender in 2010 as a set project to demonstrate blender capabilities.",
         WATCHNOW_BUTTON_LABEL : "Watch Now",
+    },
+    ADWRAPPER : {
+        START : "Advertisements in ",
+        END : "Video Resumes in "
+    },
+    OTHERLANGUAGE : {
+        LANGUAGE_REPRESENTATION : ['E','ह','த','മ','తె'],
+        HEADING : "View in Other Languages",
     }
 }

@@ -15,4 +15,15 @@
         display: flex;
         column-gap: 1rem;
     }
+    .languageHeading{
+        color: colors.$white;
+        margin: 3rem 0 1rem 0;
+    }
+    .otherLanguageContainer{
+        display: flex;
+        column-gap: 1rem;
+        width: 20%;
+        align-items: center;
+        justify-content: space-between;
+    }
 }

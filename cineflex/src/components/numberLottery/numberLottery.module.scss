@@ -27,6 +27,7 @@
         &.error{
             border: 2px solid colors.$red;
             &:focus{
+                border: 0;
                 outline-color: colors.$red;
             }
         }
