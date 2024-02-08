@@ -37,7 +37,6 @@ const Home = () => {
           <div className={styles.otherLanguageContainer}>
             {otherLanguageIcons}
           </div>
-          
         </div>
       </div>
     </>

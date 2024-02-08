@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import styles from './shortTeaserVideo.module.scss'
 import { FaPlayCircle } from "react-icons/fa";
 
 const ShortTeaserVideo = ({ src, width = '100%', isAdPlaying, isAdDisplayed=null, onPlay = null, onPause = null, heading = null}) => {
     const videoRef = useRef(null);
     const [isVideoPlaying, setIsVideoplaying] = useState(false)
-    const startPlay = () => {
+    const startPlay = useCallback(() => {
         const player = videoRef?.current;
         player?.play()
         setIsVideoplaying(true)
@@ -13,7 +13,7 @@ const ShortTeaserVideo = ({ src, width = '100%', isAdPlaying, isAdDisplayed=null
         {
             onPlay();
         }
-    }
+    },[isAdDisplayed,onPlay]);
 
     const pausePlay = () => {
         setIsVideoplaying(false)
@@ -33,7 +33,7 @@ const ShortTeaserVideo = ({ src, width = '100%', isAdPlaying, isAdDisplayed=null
         {
             startPlay();
         }
-    },[isAdPlaying])
+    },[isAdPlaying,startPlay])
    
     
     return (    

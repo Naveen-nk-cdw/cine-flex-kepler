@@ -37,5 +37,8 @@ export const CONSTANTS = {
     OTHERLANGUAGE : {
         LANGUAGE_REPRESENTATION : ['E','ह','த','മ','తె'],
         HEADING : "View in Other Languages",
+    },
+    ALLMOVIES_HEADING : {
+        
     }
 }
