@@ -22,3 +22,7 @@
     background: colors.$primaryGold;
     padding: 1rem 1.5rem;
 }
+.loadMoreButton{
+    @extend .primaryButton;
+    width: 30%;
+}

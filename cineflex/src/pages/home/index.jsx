@@ -14,7 +14,6 @@ const Home = () => {
   const otherLanguageIcons = CONSTANTS.OTHERLANGUAGE.LANGUAGE_REPRESENTATION.map((letterLabel)=>{
     return <LetterIcon key={uuidv4()} letterLabel={letterLabel}/>
   })
-  console.log(otherLanguageIcons);
   return (
     <>
       <div className={styles.homeBanner}>

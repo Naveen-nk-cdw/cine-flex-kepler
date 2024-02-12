@@ -1,0 +1,44 @@
+@use '../../styles/colors';
+.allMovieContainerLayout{
+    padding: 2.5rem 4rem;
+    background-color: colors.$black;
+    display: flex;
+    height: calc(100vh - 60.5px - 5rem);
+    justify-content: center;
+    .allMovieContainer{
+        max-width: 1440px;
+        width: 100%;
+        height: 100%;
+        .heading{
+            color: colors.$white;
+            margin: 0;
+            height: 4%;
+            font-weight: 500;
+        }
+        .contentContainer{
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 3rem;
+            height: 96%;
+            width: 100%;
+            .leftContainer{
+                width: 50%;
+                height: calc(100% - 2rem);
+                margin-top: 2rem;
+                .moviePosterContainer{
+                    display: flex;
+                    flex-wrap: wrap;
+                    overflow: scroll;
+                    height: 80%;
+                    row-gap: 2.4rem;
+                    column-gap: 1rem;
+                    margin-bottom: 2rem;
+                }
+            }
+            .rightContainer{
+                margin-top: 2rem;
+                width: calc(50% - 3rem);
+            }
+        }
+    }
+}
