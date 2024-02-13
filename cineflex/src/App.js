@@ -3,12 +3,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './pages/layout';
 import Home from './pages/home';
 import AllMovies from './pages/allMovies';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import NowShowing from './pages/nowShowing';
 import { ALL_MOVIES_MOCK_DATA, CONSTANTS } from './constants/constants';
 import Login from './pages/login';
 import ProtecedRoute from './components/protectedRoute';
 import { addCustomLike } from './utils/LikeHelper';
+import { fetchMovies } from './services/fetchService';
 
 export const AppContext = createContext(null);
 export const AllMoviescontext = createContext(null);
@@ -20,7 +21,19 @@ function App() {
       isLoggedIn : false
     }
   );
-  const[ moviesData, setMoviesData] =  useState({data : addCustomLike(ALL_MOVIES_MOCK_DATA), selectedMovie: "1"});
+  const[moviesData, setMoviesData] =  useState({data : null, selectedMovie: "1"});
+  const[allMoviesLoader, setAllMoviesLoader] = useState(true);
+  const loadInitialData = async() =>{
+    const data = await fetchMovies();
+    setMoviesData({
+      ...moviesData,
+      data : addCustomLike(data)
+    })
+    setAllMoviesLoader(!allMoviesLoader);
+  }
+  useEffect(()=>{
+    loadInitialData()
+  },[])
   return (
     <AppContext.Provider value = {{currentUserDetails,setCurrentUserDetails}}>
       <div className="App">
@@ -30,7 +43,7 @@ function App() {
               <Route index element={<Home/>}/>
                 <Route path={CONSTANTS.HEADER.ALL_MOVIES_ROUTE} element={
                 <AllMoviescontext.Provider value = {{ moviesData, setMoviesData}}>
-                  <AllMovies/>
+                  {allMoviesLoader ? 'loader' :<AllMovies/>}
                 </AllMoviescontext.Provider>
                 }/>
               <Route path={CONSTANTS.HEADER.LOGIN_ROUTE} element={<Login/>}/>

@@ -25,7 +25,7 @@ export const decrementLike = (id,moviesData)=>{
 
 export const getSelectedMovie = (id,moviesData) => {
     let selectedMovie = null;
-    moviesData.forEach(data => {
+    moviesData?.forEach(data => {
         if(data.id === id)
         {    
             selectedMovie = data;
@@ -35,7 +35,12 @@ export const getSelectedMovie = (id,moviesData) => {
 }
 
 export const addCustomLike = (moviesData) =>{
-    return moviesData.map( data => {
-        return {...data, isLiked : false}
-    })
+    console.log(moviesData);
+    if(moviesData)
+    {
+        return moviesData?.map( data => {
+            return {...data, isLiked : false}
+        })
+    }
+    
 }
