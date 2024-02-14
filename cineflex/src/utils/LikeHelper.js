@@ -35,7 +35,6 @@ export const getSelectedMovie = (id,moviesData) => {
 }
 
 export const addCustomLike = (moviesData) =>{
-    console.log(moviesData);
     if(moviesData)
     {
         return moviesData?.map( data => {

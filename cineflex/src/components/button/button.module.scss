@@ -26,3 +26,7 @@
     @extend .primaryButton;
     width: 30%;
 }
+.loginFormButton{
+    @extend .primaryButton;
+    width: 100%;
+}

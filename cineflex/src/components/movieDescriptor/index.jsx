@@ -10,7 +10,7 @@ const MovieDescriptor = ({movieHeading,likesCount,movieImgSrc,movieDescription,a
     const { moviesData, setMoviesData } = useContext(AllMoviescontext);
     useEffect(()=>{
         resetAd();
-        triggerAd && triggerAd(true,15);        
+        triggerAd && triggerAd(true);        
     },[movieHeading])
     const likeHandler = () =>{
         let updateData = !isLiked ? incrementLike(movieId, moviesData.data): decrementLike(movieId, moviesData.data) ;

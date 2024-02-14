@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Counter from "../counter";
 import styles from "./adWrapper.module.scss";
 import { CONSTANTS } from "../../constants/constants";

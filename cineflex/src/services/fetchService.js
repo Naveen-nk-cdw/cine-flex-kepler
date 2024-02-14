@@ -3,7 +3,6 @@ const TEASER_BASE_URL = "https://mocki.io/v1/cd6ef37c-2822-47dc-8a14-606d5edc9fa
 export const fetchTrailers = async() => {
     try{
         const response = await fetch(TRAILER_BASE_URL);
-        console.log(response.data);
         const data = await response.json();
         return data;
     }
@@ -15,7 +14,6 @@ export const fetchTrailers = async() => {
 export const fetchMovies = async() =>{
     try{
         const response = await fetch(TEASER_BASE_URL);
-        console.log(response.data);
         const data = await response.json();
         return data;
     }

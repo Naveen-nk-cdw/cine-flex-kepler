@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useContext, useEffect, useState } from 'react'
+import React, {useCallback, useContext, useEffect, useState } from 'react'
 import styles from  './allMovie.module.scss';
 import { CONSTANTS } from '../../constants/constants';
 import { AllMoviescontext } from '../../App';
@@ -13,7 +13,7 @@ const AdWrappedMovieDescriptor = AdWrapper(MovieDescriptor,15,5,'movieDescriptor
 
 const AllMovies = () => {
   
-  const { moviesData, setMoviesData } = useContext(AllMoviescontext);
+  const { moviesData } = useContext(AllMoviescontext);
   const [ selectedMovie, setSelectedMovie] = useState(getSelectedMovie(moviesData?.selectedMovie,moviesData?.data))
   const [ loadMore, setLoadMore] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);

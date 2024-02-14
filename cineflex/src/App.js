@@ -5,7 +5,7 @@ import Home from './pages/home';
 import AllMovies from './pages/allMovies';
 import { createContext, useEffect, useState } from 'react';
 import NowShowing from './pages/nowShowing';
-import { ALL_MOVIES_MOCK_DATA, CONSTANTS } from './constants/constants';
+import { CONSTANTS } from './constants/constants';
 import Login from './pages/login';
 import ProtecedRoute from './components/protectedRoute';
 import { addCustomLike } from './utils/LikeHelper';
