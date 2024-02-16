@@ -1,5 +1,13 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styles from './button.module.scss'
+/**
+ * 
+ * @param onClick callback for onclick
+ * @param label label for button
+ * @param type based on button type styles are switched
+ * @disabled boolean to control the button
+ * @returns 
+ */
 const Button = ({ onClick, label, type, disabled }) => {
   return (
     <button
@@ -12,4 +20,4 @@ const Button = ({ onClick, label, type, disabled }) => {
   )
 }
 
-export default Button
+export default memo(Button);

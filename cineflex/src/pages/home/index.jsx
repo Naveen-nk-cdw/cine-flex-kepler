@@ -11,15 +11,17 @@ import { v4 as uuidv4 } from 'uuid';
 import LetterIcon from '../../components/letterIcon'
 import smallAd from '../../assets/advertisements/small-promos/Advertisement-Small-1.png'
 import { fetchTrailers } from '../../services/fetchService'
-
+//HOC to wrap the shortTeaser component
 const AdWrapperShortTeaser = AdWrapper(ShortTeaserVideo,5,2,'shortTeaser',smallAd);
 
 const Home = () => {
-
+  //state to store trailer data
   const [trailersData, setTrailerssData] = useState(null);
+  //creates other language icons
   const otherLanguageIcons = CONSTANTS.OTHERLANGUAGE.LANGUAGE_REPRESENTATION.map((letterLabel)=>{
     return <LetterIcon key={uuidv4()} letterLabel={letterLabel}/>
   })
+  //creates short teaser video
   const shortTrailers = trailersData?.map((trailerData)=>{
     return <AdWrapperShortTeaser
         key={uuidv4()}
@@ -27,10 +29,12 @@ const Home = () => {
         heading={trailerData.title}
       />
   })
+  //fetches trailer data
   const loadInitialData = async() =>{
     const data = await fetchTrailers();
     setTrailerssData(data);
   }
+  //useeffect to trigger fetching data
   useEffect(()=>{
     loadInitialData();
   },[])
@@ -44,6 +48,9 @@ const Home = () => {
       </ErrorBoundary>
       <div className={styles.homeContainer}>
         <Trailer/>
+        <div className={styles.shortTeaserHeading}>
+            {CONSTANTS.HOME.SHORT_TEASER}
+        </div>
         <div className={styles.shortTeaserContainer}>
           {shortTrailers}
         </div>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { memo, useContext, useEffect } from 'react'
 import { AiFillLike } from "react-icons/ai";
 import styles from './movieDescriptor.module.scss'
 import { CONSTANTS } from '../../constants/constants';
@@ -6,12 +6,28 @@ import { decrementLike, incrementLike } from '../../utils/LikeHelper';
 import { v4 as uuidv4 } from 'uuid';
 import { AllMoviescontext } from '../../App';
 
+/**
+ * 
+ * @param movieHeading consists of movie heading
+ * @param likesCount consists of total likes
+ * @param movieImgSrc poster for the movie
+ * @param movieDescription description of the movie
+ * @param actors array of casts
+ * @param movieId id of the movie
+ * @param isLiked boolean for repective like of the movie
+ * @param isAdPlaying boolean to switch styles and img
+ * @param triggerAd callback function for triggering the ad
+ * @param resetAd callback function for resetting the ad
+ * @returns 
+ */
 const MovieDescriptor = ({movieHeading,likesCount,movieImgSrc,movieDescription,actors,movieId,isLiked,isAdPlaying,triggerAd,resetAd}) => {
     const { moviesData, setMoviesData } = useContext(AllMoviescontext);
+    //triggers the ad on change of movie content
     useEffect(()=>{
         resetAd();
         triggerAd && triggerAd(true);        
     },[movieHeading])
+    //Handles like action
     const likeHandler = () =>{
         let updateData = !isLiked ? incrementLike(movieId, moviesData.data): decrementLike(movieId, moviesData.data) ;
         setMoviesData({
@@ -57,4 +73,4 @@ const MovieDescriptor = ({movieHeading,likesCount,movieImgSrc,movieDescription,a
   )
 }
 
-export default MovieDescriptor
+export default memo(MovieDescriptor);

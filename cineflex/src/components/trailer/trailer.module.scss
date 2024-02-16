@@ -7,7 +7,6 @@
 .signIn{
     font-size: 0.8rem;
     color: colors.$white;
-    margin-bottom: 1.5rem;
     .signInLink{
         color: colors.$blue;
         text-decoration: none;
@@ -19,6 +18,7 @@
 .container{
     display: flex;
     color: colors.$white;
+    margin-top: 1.5rem;
     column-gap: 3rem;
     .leftContainer{
         width: 55%;

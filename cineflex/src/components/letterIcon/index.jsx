@@ -1,5 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styles from './letterIcon.module.scss'
+/**
+ * 
+ * @param letterLabel label for the icon 
+ * @returns 
+ */
 const LetterIcon = ({letterLabel}) => {
   return (
     <div className={styles.iconBox}>
@@ -8,4 +13,4 @@ const LetterIcon = ({letterLabel}) => {
   )
 }
 
-export default LetterIcon
+export default memo(LetterIcon);

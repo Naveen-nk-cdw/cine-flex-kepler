@@ -5,19 +5,26 @@
         height: 100%;
         width: 100%;
         overflow: hidden;
+        object-fit: cover;
     }
 }
 .homeContainer{
     background-color: colors.$black;
     padding: 4rem 6rem;
-    .shortTeaserContainer{
+    .shortTeaserHeading{
+        color: colors.$white;
+        font-size: 2rem;
+        text-transform: capitalize;
         margin-top: 6rem;
+    }
+    .shortTeaserContainer{
+        
         display: flex;
         column-gap: 1rem;
     }
     .languageHeading{
         color: colors.$white;
-        margin: 3rem 0 1rem 0;
+        margin: 8rem 0 1rem 0;
     }
     .otherLanguageContainer{
         display: flex;

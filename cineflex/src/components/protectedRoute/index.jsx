@@ -5,6 +5,7 @@ import { AppContext } from '../../App';
 
 const ProtecedRoute = () => {
     const { currentUserDetails } = useContext(AppContext);
+    //checks the user login and redirects
     if(!currentUserDetails.isLoggedIn)
     {
         return <Navigate to={CONSTANTS.HEADER.LOGIN_ROUTE}/>

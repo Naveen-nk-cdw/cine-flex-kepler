@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { memo, useContext } from 'react'
 import styles from './trailer.module.scss';
 import { CONSTANTS } from '../../constants/constants';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,6 +9,7 @@ import Button from '../button';
 const Trailer = () => {
     const navigate = useNavigate();
     const { currentUserDetails } = useContext(AppContext);
+    //redirects to watch now
     const handleWatchNow = () =>{
         navigate(CONSTANTS.HEADER.NOW_SHOWING_ROUTE)
     }
@@ -42,4 +43,4 @@ const Trailer = () => {
   )
 }
 
-export default Trailer
+export default memo(Trailer);

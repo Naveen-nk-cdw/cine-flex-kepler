@@ -6,6 +6,7 @@ import { decrementLike, incrementLike } from '../../utils/LikeHelper';
 
 const MovieCard = ({imgSrc, movieName, likesCounts, movieId, isLiked}) => {
     const { moviesData, setMoviesData } = useContext(AllMoviescontext);
+    //handles on incrementing the likes
     const incrementLikeHandler = () =>{
         let updateData = !isLiked ? incrementLike(movieId, moviesData.data): decrementLike(movieId, moviesData.data);
         setMoviesData({
@@ -13,6 +14,7 @@ const MovieCard = ({imgSrc, movieName, likesCounts, movieId, isLiked}) => {
             ...moviesData,
         })
     }
+    //toggles selected movie based on card selection
     const moviePosterHandler = () =>{
         setMoviesData({
             ...moviesData,

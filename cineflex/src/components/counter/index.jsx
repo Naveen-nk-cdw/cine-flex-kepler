@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-
+/**
+ * 
+ * @param initialMinutes gets the counters starting minute
+ * @param intiialSeconds gets the counters starting seconds
+ * @param onTimeEnd callback on completion of counter
+ * @param className for styles
+ * @param prefix counters prefix label
+ * @returns 
+ */
 const Counter = ({
   initialMinutes = 0,
   initialSeconds = 25,
@@ -12,10 +20,12 @@ const Counter = ({
   const [minutes, setMinutes] = useState(initialMinutes);
   const [seconds, setSeconds] = useState(initialSeconds);
 
+  //to set the counter on change of initial seconds
   useEffect(() => {
     setSeconds(initialSeconds);
   }, [initialSeconds]);
 
+  //use effect that controls the timer
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isPaused) {
@@ -37,6 +47,7 @@ const Counter = ({
     }, 1000);
     return () => clearInterval(interval);
   }, [minutes, seconds, onTimeEnd, isPaused]);
+  
   return (
     <div className={className}>
       {prefix + String(minutes).padStart(2, "0")}:

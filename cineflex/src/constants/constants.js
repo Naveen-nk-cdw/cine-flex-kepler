@@ -12,7 +12,8 @@ export const CONSTANTS = {
         USER_GREETING : "Hi",
     },
     HOME : {
-        HOME_BANNER_ALT : "sindel Image"
+        HOME_BANNER_ALT : "sindel Image",
+        SHORT_TEASER : "short teasers",
     },
     NUMBER_LOTTERY : {
         PARTICIPATE_PRIZE : "Your Mobile Number can win you exciting prizes",

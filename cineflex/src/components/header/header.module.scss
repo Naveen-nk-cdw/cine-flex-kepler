@@ -25,10 +25,16 @@
             &:hover{
                 color: colors.$blue;
             }
+            &.active{
+                color: colors.$blue;
+            }
         }
         .allMovies{
             text-decoration: none;
             &:hover{
+                color: colors.$blue;
+            }
+            &.active{
                 color: colors.$blue;
             }
         }
@@ -36,7 +42,11 @@
             &:hover{
                 color: colors.$blue;
             }
+            &.active{
+                color: colors.$blue;
+            }
         }
+        
     }
     .profile{
         display: flex;

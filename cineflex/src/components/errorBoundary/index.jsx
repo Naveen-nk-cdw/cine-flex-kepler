@@ -7,6 +7,7 @@ class ErrorBoundary extends React.Component {
       this.state = { hasError: false };
     }
   
+    //State gets erro on occurence of error
     static getDerivedStateFromError(error) {
       return { hasError: true };
     }
@@ -15,7 +16,7 @@ class ErrorBoundary extends React.Component {
         console.log(error,errorInfo);
     }
     
-  
+    //wraps the passed component and returns, on error fallback is been used
     render() {
       if (this.state.hasError) {
         return <div className={styles.container}>

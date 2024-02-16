@@ -21,13 +21,12 @@
         &::-webkit-inner-spin-button{
             -webkit-appearance: none;
         }  
-        padding: 1rem 0.5rem;
-        border: 0;
+        padding: 1.2rem 0.5rem;
+        border: 2px solid transparent;
         width: 20%;
         &.error{
             border: 2px solid colors.$red;
             &:focus{
-                border: 0;
                 outline-color: colors.$red;
             }
         }
