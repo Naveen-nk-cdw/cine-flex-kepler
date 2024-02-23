@@ -1,12 +1,12 @@
 @use '../../styles/colors';
-.iconBox{
+.iconBox {
     border: 2px solid colors.$blue;
     display: flex;
     align-items: center;
     justify-content: center;
     color: colors.$blue;
     padding: 1rem;
-    .wrapper{
+    .wrapper {
         width: 1.5rem;
         height: 1.5rem;
         font-size: 1.2rem;

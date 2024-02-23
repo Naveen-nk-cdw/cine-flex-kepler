@@ -1,32 +1,31 @@
 @use '../../styles/colors';
-.homeBanner{
+.homeBanner {
     height: calc(100vh - 60.5px);
-    img{
+    img {
         height: 100%;
         width: 100%;
         overflow: hidden;
         object-fit: cover;
     }
 }
-.homeContainer{
+.homeContainer {
     background-color: colors.$black;
     padding: 4rem 6rem;
-    .shortTeaserHeading{
+    .shortTeaserHeading {
         color: colors.$white;
         font-size: 2rem;
         text-transform: capitalize;
         margin-top: 6rem;
     }
-    .shortTeaserContainer{
-        
+    .shortTeaserContainer {
         display: flex;
         column-gap: 1rem;
     }
-    .languageHeading{
+    .languageHeading {
         color: colors.$white;
         margin: 8rem 0 1rem 0;
     }
-    .otherLanguageContainer{
+    .otherLanguageContainer {
         display: flex;
         column-gap: 1rem;
         width: 20%;

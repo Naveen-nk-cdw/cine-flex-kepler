@@ -1,75 +1,74 @@
 @use '../../styles/colors';
 
-.header{
+.header {
     background-color: colors.$black;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: colors.$white;
-    .logo{
+    .logo {
         width: 10%;
     }
-    a{
+    a {
         color: inherit;
         text-decoration: none;
     }
-    .links{
+    .links {
         display: flex;
         font-size: 1.5rem;
         font-weight: 500;
         gap: 4rem;
         cursor: pointer;
         text-transform: uppercase;
-        .home{
-            &:hover{
+        .home {
+            &:hover {
                 color: colors.$blue;
             }
-            &.active{
+            &.active {
                 color: colors.$blue;
             }
         }
-        .allMovies{
+        .allMovies {
             text-decoration: none;
-            &:hover{
+            &:hover {
                 color: colors.$blue;
             }
-            &.active{
-                color: colors.$blue;
-            }
-        }
-        .nowShowing{
-            &:hover{
-                color: colors.$blue;
-            }
-            &.active{
+            &.active {
                 color: colors.$blue;
             }
         }
-        
+        .nowShowing {
+            &:hover {
+                color: colors.$blue;
+            }
+            &.active {
+                color: colors.$blue;
+            }
+        }
     }
-    .profile{
+    .profile {
         display: flex;
         gap: 1rem;
-        .userName{
-            &::after{
+        .userName {
+            &::after {
                 content: '';
-                padding-left: 0.8rem ;
+                padding-left: 0.8rem;
                 border-right: 1px solid colors.$white;
             }
         }
-        .login{
+        .login {
             text-transform: capitalize;
         }
-        .logout{
+        .logout {
             text-transform: uppercase;
         }
         .logout,
-        .login{
+        .login {
             cursor: pointer;
-            &:hover{
+            &:hover {
                 color: colors.$blue;
             }
         }
-    }   
+    }
 }

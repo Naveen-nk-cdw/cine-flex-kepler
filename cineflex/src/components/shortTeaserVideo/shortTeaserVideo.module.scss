@@ -1,19 +1,19 @@
 @use '../../styles/colors';
-.container{
+.container {
     width: 100%;
     height: 100%;
-    .heading{
+    .heading {
         color: colors.$white;
         margin: 1rem 0;
         font-size: 1.3rem;
     }
-    .videoContainer{
+    .videoContainer {
         position: relative;
         height: 100%;
-        video{
+        video {
             height: 100%;
         }
-        .playIcon{
+        .playIcon {
             color: colors.$white;
             position: absolute;
             top: 50%;
@@ -23,10 +23,10 @@
             cursor: pointer;
         }
     }
-    img{
+    img {
         width: 100%;
     }
-    .hide{
+    .hide {
         display: none;
     }
 }
