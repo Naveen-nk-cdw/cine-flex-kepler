@@ -32,6 +32,7 @@ const MovieCard = ({ imgSrc, movieName, likesCounts, movieId, isLiked }) => {
                     <div>{likesCounts}</div>
                 </div>
                 <AiFillLike
+                    data-testid = 'likeIcon'
                     className={`${styles.likeIcon} ${isLiked ? styles.liked : ''}`}
                     onClick={incrementLikeHandler}
                 />

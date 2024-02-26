@@ -54,6 +54,7 @@ const MovieDescriptor = ({
                 <div className={styles.headerContainer}>
                     <h1 className={styles.heading}>{movieHeading}</h1>
                     <AiFillLike
+                        data-testid = 'like-icon'
                         className={`${styles.likeIcon} ${isLiked ? styles.liked : ''}`}
                         onClick={likeHandler}
                     />
@@ -71,8 +72,7 @@ const MovieDescriptor = ({
                         {actors?.map((castName) => {
                             return (
                                 <div key={uuidv4()} className={styles.actorName}>
-                                    {' '}
-                                    {castName}{' '}
+                                    {castName}
                                 </div>
                             );
                         })}
@@ -80,7 +80,7 @@ const MovieDescriptor = ({
                 </div>
             </div>
             <div className={isAdPlaying ? styles.adPoster : styles.hide}>
-                <img src={movieImgSrc} alt='movie poster' />
+                <img src={movieImgSrc} alt='ad poster' />
             </div>
         </>
     );

@@ -47,12 +47,13 @@ const ShortTeaserVideo = ({
                     width={width}
                     onPause={pausePlay}
                     controls={isVideoPlaying}
+                    data-testid="videoPlayer"
                     poster={
                         'https://static.vecteezy.com/system/resources/previews/005/086/584/non_2x/beautiful-landscape-with-trees-in-autumn-season-free-vector.jpg'
                     }
                 />
                 {!isVideoPlaying && (
-                    <FaPlayCircle className={styles.playIcon} onClick={startPlay} />
+                    <FaPlayCircle data-testid = 'playIcon' className={styles.playIcon} onClick={startPlay} />
                 )}
             </div>
             <img className={isAdPlaying ? styles.videoContainer : styles.hide} src={src} alt='ad' />

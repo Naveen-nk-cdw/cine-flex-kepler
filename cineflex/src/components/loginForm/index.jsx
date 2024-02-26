@@ -55,12 +55,13 @@ const LoginForm = () => {
             <div className={styles.description}>{CONSTANTS.LOGIN_FORM.LOGIN_DESCRIPTION}</div>
             <form className={styles.formContainer} onSubmit={handleSubmit}>
                 <div className={styles.emailContainer}>
-                    <label className={formData.emailActive ? styles.active : ''}>
+                    <label htmlFor='emailInput' className={formData.emailActive ? styles.active : ''}>
                         {CONSTANTS.LOGIN_FORM.EMAIL_LABEL}
                     </label>
                     <input
                         type='email'
                         name='email'
+                        id='emailInput'
                         value={formData.email}
                         onFocus={focusHandler}
                         onBlur={blurHandler}
@@ -70,12 +71,13 @@ const LoginForm = () => {
                 </div>
 
                 <div className={styles.passwordContainer}>
-                    <label className={formData.passwordActive ? styles.active : ''}>
+                    <label htmlFor='password' className={formData.passwordActive ? styles.active : ''}>
                         {CONSTANTS.LOGIN_FORM.PASSWORD_LABEL}
                     </label>
                     <input
                         type='password'
                         name='password'
+                        id='password'
                         onFocus={focusHandler}
                         value={formData.password}
                         onChange={handleInputChange}
