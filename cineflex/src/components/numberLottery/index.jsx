@@ -6,10 +6,12 @@ const NumberLottery = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [phoneNumberError, setPhoneNumberError] = useState(false);
     const [lotteryWinner, setLotteryWinner] = useState(null);
+    const regex = /^\d+$/;
     //handles input change
     const handleNumberInput = (event) => {
         const inputValue = event.target.value;
-        if (inputValue.length > 10) {
+        console.log(inputValue.length,regex.test(inputValue));
+        if (!regex.test(inputValue) && inputValue!='') {
             event.preventDefault();
             return;
         }
@@ -44,10 +46,9 @@ const NumberLottery = () => {
                     </div>
                     <input
                         className={`${styles.phoneNumberInput} ${phoneNumberError && styles.error}`}
-                        type='tel'
-                        min={0}
+                        type='text'
+                        maxLength={10}
                         value={phoneNumber}
-                        max={9999999999}
                         placeholder={CONSTANTS.NUMBER_LOTTERY.INPUT_PLACEHOLDER}
                         onChange={handleNumberInput}
                     />
