@@ -33,7 +33,7 @@ const Trailer = () => {
                     <p>{CONSTANTS.TRAILER.SINTEL_DESCRIPTION}</p>
                     <Button
                         label={CONSTANTS.TRAILER.WATCHNOW_BUTTON_LABEL}
-                        type={'primary'}
+                        designType={'primary'}
                         onClick={handleWatchNow}
                     />
                 </div>

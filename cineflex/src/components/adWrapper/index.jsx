@@ -23,6 +23,8 @@ const AdWrapper = (Component, adIn, resumeIn, type, adImg) => {
         const [isAdDisplayed, setIsAdDisplayed] = useState(false);
         const [isAdPaused, setIsAdPaused] = useState(false);
         const [adCompleted, setAdCompleted] = useState(null);
+        const [player, setPlayer] = useState(null);
+        const [playerCurrentTime, setPlayerCurrentTime] = useState(null);
 
         //resets the ad states to intial state
         const resetAd = () => {
@@ -35,7 +37,9 @@ const AdWrapper = (Component, adIn, resumeIn, type, adImg) => {
         };
 
         //Helps to start the AD
-        const triggerAd = (trigger = null, newTimer = null) => {
+        const triggerAd = (trigger = null, playerRef = null) => {
+            // console.log(playerRef.currentTime);
+            setPlayer(playerRef);
             setAdDuration(adIn);
             if (adCompleted === null || trigger) {
                 setShowTimer(true);
@@ -53,6 +57,7 @@ const AdWrapper = (Component, adIn, resumeIn, type, adImg) => {
         };
         //Displays ad once pre ad time is completed
         const switchAd = () => {
+            setPlayerCurrentTime(player?.currentTime)
             setAdPrefix(CONSTANTS.ADWRAPPER.END);
             setAdDuration(resumeIn);
             setAd(!ad);
@@ -76,6 +81,7 @@ const AdWrapper = (Component, adIn, resumeIn, type, adImg) => {
                     isAdPlaying={ad}
                     onPlay={triggerAd}
                     onPause={handlePause}
+                    playTimerOnResume={playerCurrentTime}
                 />
             ),
             movieDescriptor: (

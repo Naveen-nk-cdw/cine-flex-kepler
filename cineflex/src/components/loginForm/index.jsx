@@ -15,7 +15,7 @@ const LoginForm = () => {
     const { setCurrentUserDetails } = useContext(AppContext);
     const navigate = useNavigate();
     const handleSubmit = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         setCurrentUserDetails({
             userName: formData.email,
             isLoggedIn: true,
@@ -87,8 +87,8 @@ const LoginForm = () => {
                 </div>
                 <Button
                     label={CONSTANTS.LOGIN_FORM.SUBMIT_LABEL}
-                    onClick={handleSubmit}
-                    type={'loginForm'}
+                    designType={'loginForm'}
+                    type='submit'
                 />
             </form>
         </div>

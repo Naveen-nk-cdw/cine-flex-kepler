@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes } from "react-router-dom";
 import LoginForm from "."
-import { act, render, screen, setCurrentUserDetails, waitFor } from "../../pages/home/homeTest.utils"
+import { act, fireEvent, render, screen, setCurrentUserDetails, waitFor } from "../../pages/home/homeTest.utils"
 import { CONSTANTS } from "../../constants/constants";
 import user from "@testing-library/user-event";
 
@@ -38,7 +38,7 @@ describe('loginForm', () => {
 
         const loginButton = screen.getByRole('button', { name: CONSTANTS.LOGIN_FORM.SUBMIT_LABEL });
         await act(async()=>{
-            await user.click(loginButton);
+            await fireEvent.submit(loginButton);
         })
 
         await waitFor(() => {

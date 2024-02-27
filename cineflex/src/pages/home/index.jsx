@@ -38,7 +38,7 @@ const Home = () => {
         const data = await fetchTrailers();
         setTrailerssData(data);
     };
-    //useeffect to trigger fetching data
+    //fetching API data
     useEffect(() => {
         loadInitialData();
     }, []);

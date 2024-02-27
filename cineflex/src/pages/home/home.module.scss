@@ -1,6 +1,6 @@
 @use '../../styles/colors';
 .homeBanner {
-    height: calc(100vh - 60.5px);
+    height: calc(100vh - 76.5px - 7.75rem);
     img {
         height: 100%;
         width: 100%;
@@ -10,7 +10,7 @@
 }
 .homeContainer {
     background-color: colors.$black;
-    padding: 4rem 6rem;
+    padding: 4rem 8rem;
     .shortTeaserHeading {
         color: colors.$white;
         font-size: 2rem;
@@ -19,7 +19,7 @@
     }
     .shortTeaserContainer {
         display: flex;
-        column-gap: 1rem;
+        column-gap: 2.5rem;
     }
     .languageHeading {
         color: colors.$white;

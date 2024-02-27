@@ -10,15 +10,25 @@ const ShortTeaserVideo = ({
     onPlay = null,
     onPause = null,
     heading = null,
+    playTimerOnResume = 0
 }) => {
     const videoRef = useRef(null);
     const [isVideoPlaying, setIsVideoplaying] = useState(false);
+    //resumes once ad completed
+    useEffect(()=>{
+        if(isAdDisplayed)
+        {
+            const player = videoRef?.current;
+            player.currentTime = playTimerOnResume;
+            player?.play();
+        }
+    },[isAdDisplayed])
     const startPlay = useCallback(() => {
         const player = videoRef?.current;
         player?.play();
         setIsVideoplaying(true);
         if (!isAdDisplayed && onPlay) {
-            onPlay();
+            onPlay(true,player);
         }
     }, [isAdDisplayed, onPlay]);
 

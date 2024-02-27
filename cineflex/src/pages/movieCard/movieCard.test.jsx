@@ -31,7 +31,7 @@ describe('movieCard', () => {
             </AllMoviescontext.Provider>
         )
         expect(screen.getByText('Movie 1')).toBeInTheDocument();
-        expect(screen.getByText('10')).toBeInTheDocument();
+        expect(screen.getByText('10 Likes')).toBeInTheDocument();
         expect(screen.getByAltText('movie')).toBeInTheDocument();
     })
     test('like icon click',async()=>{

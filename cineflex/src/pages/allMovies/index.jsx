@@ -72,7 +72,7 @@ const AllMovies = () => {
                             <Button
                                 onClick={handlePageChange}
                                 label={CONSTANTS.ALLMOVIES.LOAD_MORE_LABEL}
-                                type={'loadMore'}
+                                designType={'loadMore'}
                             />
                         )}
                     </div>

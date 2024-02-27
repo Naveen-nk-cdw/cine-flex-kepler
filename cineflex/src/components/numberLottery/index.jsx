@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './numberLottery.module.scss';
 import { CONSTANTS } from '../../constants/constants';
 import Button from '../button';
+
 const NumberLottery = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [phoneNumberError, setPhoneNumberError] = useState(false);
@@ -10,7 +11,7 @@ const NumberLottery = () => {
     //handles input change
     const handleNumberInput = (event) => {
         const inputValue = event.target.value;
-        if (!regex.test(inputValue) && inputValue!='') {
+        if (!regex.test(inputValue) && inputValue !== '') {
             event.preventDefault();
             return;
         }
@@ -27,6 +28,7 @@ const NumberLottery = () => {
                 !CONSTANTS.NUMBER_LOTTERY.PHONE_NUMBER_REGEX.test(phoneNumber),
         );
     }, [phoneNumber]);
+    
     const checkPrizeWinner = () => {
         if (parseInt(phoneNumber) % 2 === 0) {
             setLotteryWinner('winner');
@@ -54,7 +56,7 @@ const NumberLottery = () => {
                     <Button
                         label={CONSTANTS.NUMBER_LOTTERY.SUBMIT_BUTTON_LABEL}
                         onClick={checkPrizeWinner}
-                        type={'prize'}
+                        designType={'prize'}
                         disabled={phoneNumberError}
                     />
                 </>

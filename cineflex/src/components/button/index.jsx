@@ -8,12 +8,13 @@ import styles from './button.module.scss';
  * @disabled boolean to control the button
  * @returns
  */
-const Button = ({ onClick, label, type, disabled }) => {
+const Button = ({ onClick, label, designType, disabled, ...props }) => {
     return (
         <button
-            className={`${type ? styles[`${type}Button`] : ''} ${disabled ? styles.disabled : ''}`}
+            className={`${designType ? styles[`${designType}Button`] : ''} ${disabled ? styles.disabled : ''}`}
             onClick={onClick}
             disabled={disabled}
+            {...props}
         >
             {label}
         </button>

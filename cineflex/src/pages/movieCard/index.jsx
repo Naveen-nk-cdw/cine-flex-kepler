@@ -3,6 +3,7 @@ import styles from './movieCard.module.scss';
 import { AiFillLike } from 'react-icons/ai';
 import { AllMoviescontext } from '../../App';
 import { decrementLike, incrementLike } from '../../utils/LikeHelper';
+import { CONSTANTS } from '../../constants/constants';
 
 const MovieCard = ({ imgSrc, movieName, likesCounts, movieId, isLiked }) => {
     const { moviesData, setMoviesData } = useContext(AllMoviescontext);
@@ -29,7 +30,7 @@ const MovieCard = ({ imgSrc, movieName, likesCounts, movieId, isLiked }) => {
             <div className={styles.bottomContainer}>
                 <div>
                     <div>{movieName}</div>
-                    <div>{likesCounts}</div>
+                    <div>{`${likesCounts} ${CONSTANTS.ALLMOVIES.LIKES_LABEL}`}</div>
                 </div>
                 <AiFillLike
                     data-testid = 'likeIcon'

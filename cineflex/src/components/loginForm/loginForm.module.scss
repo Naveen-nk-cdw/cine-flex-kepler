@@ -6,10 +6,11 @@
     background-color: #000000d0;
     width: 20%;
     padding: 3rem;
+    border-top: 2px solid colors.$gold2;
     .heading {
         color: colors.$white;
         font-size: 2rem;
-        margin-top: 5rem;
+        margin-top: 4rem;
         font-weight: 300;
     }
     .description {
@@ -36,7 +37,8 @@
                 }
             }
             input {
-                padding: 1rem 1rem 0.1rem 0;
+                padding: 1rem 0rem 0.1rem 0;
+                width: 100%;
                 color: colors.$white;
                 border: 0;
                 background: transparent;

@@ -54,4 +54,7 @@ export const CONSTANTS = {
         PASSWORD_LABEL: 'Password',
         SUBMIT_LABEL: 'Login',
     },
+    NOT_FOUND: {
+        MESSAGE: '404 Not Found',
+    }
 };
