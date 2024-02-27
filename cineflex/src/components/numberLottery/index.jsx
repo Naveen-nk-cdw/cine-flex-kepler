@@ -10,7 +10,6 @@ const NumberLottery = () => {
     //handles input change
     const handleNumberInput = (event) => {
         const inputValue = event.target.value;
-        console.log(inputValue.length,regex.test(inputValue));
         if (!regex.test(inputValue) && inputValue!='') {
             event.preventDefault();
             return;
