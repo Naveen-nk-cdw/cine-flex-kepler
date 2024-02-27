@@ -1,0 +1,51 @@
+@use '../../styles/colors';
+.loginFormContainer {
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    background-color: #000000d0;
+    width: 20%;
+    padding: 3rem;
+    .heading {
+        color: colors.$white;
+        font-size: 2rem;
+        margin-top: 5rem;
+        font-weight: 300;
+    }
+    .description {
+        margin-top: 2rem;
+        color: colors.$loginFontColor;
+        font-size: 0.8rem;
+    }
+    .formContainer {
+        margin-top: 1rem;
+
+        .emailContainer,
+        .passwordContainer {
+            position: relative;
+            margin-bottom: 2rem;
+            label {
+                color: colors.$loginFontColor;
+                position: absolute;
+                bottom: 0;
+                transition: 0.25s;
+                pointer-events: none;
+                &.active {
+                    transform: translateY(-25px);
+                    transition: 0.25s;
+                }
+            }
+            input {
+                padding: 1rem 1rem 0.1rem 0;
+                color: colors.$white;
+                border: 0;
+                background: transparent;
+                border-bottom: 1px solid colors.$loginFontColor;
+                &:focus {
+                    background: transparent;
+                    outline: none;
+                }
+            }
+        }
+    }
+}

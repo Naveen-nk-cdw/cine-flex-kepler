@@ -1,0 +1,15 @@
+@use '../../styles/colors';
+.counter {
+    color: colors.$blue;
+}
+.shortTeaserCounter {
+    @extend .counter;
+    margin-top: 4rem;
+}
+.container {
+    width: calc((100% - 2rem) / 3);
+    height: 20rem;
+}
+.largeAdContainer {
+    height: 100%;
+}

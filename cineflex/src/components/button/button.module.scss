@@ -1,0 +1,33 @@
+@use '../../styles/colors';
+.customButton {
+    padding: 1rem 1rem;
+    cursor: pointer;
+    border: 0;
+    color: colors.$white;
+    &.disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+}
+.prizeButton {
+    @extend .customButton;
+    background-color: colors.$lotteryRed;
+    font-size: 1.2rem;
+    padding: 1.15rem;
+}
+.primaryButton {
+    @extend .customButton;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    width: 20%;
+    background: colors.$primaryGold;
+    padding: 1rem 1.5rem;
+}
+.loadMoreButton {
+    @extend .primaryButton;
+    width: 30%;
+}
+.loginFormButton {
+    @extend .primaryButton;
+    width: 100%;
+}

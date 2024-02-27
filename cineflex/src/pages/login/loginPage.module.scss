@@ -1,0 +1,7 @@
+@use '../../styles/colors';
+.loginContainer {
+    background-image: url('../../assets/sindel-background.png');
+    background-size: cover;
+    position: relative;
+    height: calc(100vh - 60.5px);
+}
