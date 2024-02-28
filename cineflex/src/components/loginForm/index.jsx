@@ -15,7 +15,7 @@ const LoginForm = () => {
     const { setCurrentUserDetails } = useContext(AppContext);
     const navigate = useNavigate();
     const handleSubmit = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
         setCurrentUserDetails({
             userName: formData.email,
             isLoggedIn: true,
